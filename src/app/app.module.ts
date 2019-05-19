@@ -1,3 +1,4 @@
+import { DogsService } from './dogs.service';
 import { TextColorDirective } from './text-color.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,8 @@ import { FullUserNamePipe } from './fullname.pipe';
 import { CountPipe} from './count.pipe';
 import { RepeatPipe } from './repeat.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -22,9 +25,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    DogsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
